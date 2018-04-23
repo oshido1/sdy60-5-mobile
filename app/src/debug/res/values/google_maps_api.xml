@@ -1,0 +1,29 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=5D:F0:11:ED:5B:68:6B:DB:2A:32:35:56:A8:BC:96:D7:32:74:C2:34%3Bcom.example.panos.ge5mobile
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    5D:F0:11:ED:5B:68:6B:DB:2A:32:35:56:A8:BC:96:D7:32:74:C2:34
+
+    SHA-1 certificate fingerprint:
+    5D:F0:11:ED:5B:68:6B:DB:2A:32:35:56:A8:BC:96:D7:32:74:C2:34
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+
+
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
+        AIzaSyDeCINQiQ1eYPtdtGvpLMxQTNyiBsNcB3E
+    </string>    <!--  added by panos  same with older project NavGoogle map 09 -04- 2018 -->
+
+</resources>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "730270653540",
+    "firebase_url": "https://ergasia5mobile.firebaseio.com",
+    "project_id": "ergasia5mobile",
+    "storage_bucket": "ergasia5mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:730270653540:android:5dd4a87e08ba32ee",
+        "android_client_info": {
+          "package_name": "com.example.panos.ge5mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "730270653540-v9lc6bjvjsj957mg888jbc6f9mmt22r0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBi_OSL2YZUdwX4vxCCtl4T-JVdHfmHDkE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
