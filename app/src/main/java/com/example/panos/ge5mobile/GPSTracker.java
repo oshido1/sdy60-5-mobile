@@ -79,7 +79,7 @@ public class GPSTracker implements LocationListener {
         lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, 6000,10, this);
         //Toast.makeText(context, "GPS ENERGOPOIHMENO !!!  meta1", Toast.LENGTH_SHORT).show();
         Location l=lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-        Toast.makeText(context, "GPS ENERGOPOIHMENO !!!  meta2 pro return", Toast.LENGTH_SHORT).show();
+     //   Toast.makeText(context, "GPS ENERGOPOIHMENO !!!  meta2 pro return", Toast.LENGTH_SHORT).show();
         //++MainActivity.metritis_click_me_gps;
         //mDatabase.child("METRHTHS  click  me  GPS").setValue(MainActivity.metritis_click_me_gps);
 
@@ -88,7 +88,7 @@ public class GPSTracker implements LocationListener {
         if (l!= null) {
 
             //panos 12-04-18
-            Toast.makeText(context, "mono MIA FORA ISXYEI???", Toast.LENGTH_LONG).show();
+          //  Toast.makeText(context, "mono MIA FORA ISXYEI???", Toast.LENGTH_LONG).show();
             latprev=l.getLatitude();    // THN PRWTFH FORA MONO
             lngprev=l.getLongitude();    // THN PRWTFH FORA MONO
             counter=0;
@@ -127,7 +127,7 @@ public class GPSTracker implements LocationListener {
             //20-4-18
             MainActivity.temp_lista_LATLON.add(latprev);
             MainActivity.temp_lista_LATLON.add(lngprev);
-            Toast.makeText(context, " getlocation LATLON PROSWRI"+MainActivity.temp_lista_LATLON, Toast.LENGTH_SHORT).show(); //19-4-18
+         //   Toast.makeText(context, " getlocation LATLON PROSWRI"+MainActivity.temp_lista_LATLON, Toast.LENGTH_SHORT).show(); //19-4-18
             //20-4-18
 
 
@@ -145,7 +145,7 @@ public class GPSTracker implements LocationListener {
                     // mDatabase.child(temp_child).child("trexousa apostasi").
                     if ((dataSnapshot.child("trexousa apostasi").getValue(Double.class)!=null) && (counter==0)) {
                         MainActivity.temp_sumdistance = dataSnapshot.child("trexousa apostasi").getValue(Double.class);
-                        Toast.makeText(context, " GET LOC CURRENT only once prepei TEMP_DISTANCE "+MainActivity.temp_sumdistance, Toast.LENGTH_SHORT).show(); //18-4-18
+         //               Toast.makeText(context, " GET LOC CURRENT only once prepei TEMP_DISTANCE "+MainActivity.temp_sumdistance, Toast.LENGTH_SHORT).show(); //18-4-18
                     }
 
                 //20-4-18
@@ -178,7 +178,7 @@ public class GPSTracker implements LocationListener {
         //mDatabase.child("treasure1lat").setValue(0); //midenizei to lat sti vasi SOS  na vgei DOKIMI OK 220318
         //mDatabase.push().setValue(MainActivity.metritis_click);
 
-        Toast.makeText(context, "Please Enable Gps metritis prepei na auxanei", Toast.LENGTH_LONG).show();
+        Toast.makeText(context, "Please Enable Gps ", Toast.LENGTH_LONG).show();
     }
     return null;
 
@@ -202,7 +202,7 @@ public class GPSTracker implements LocationListener {
         option.position(pp);
         option.position(pp).title(" auto added "+counter+" "+pp.latitude + " : " + pp.longitude) ;
 
-        Toast.makeText(context, "allaxe thesi douleyei?? "+lat+" "+lon, Toast.LENGTH_LONG).show();
+     //   Toast.makeText(context, "allaxe thesi douleyei?? "+lat+" "+lon, Toast.LENGTH_LONG).show();
 
         //ContactUsFragment.map.getMaxZoomLevel(); //diko mou
         ContactUsFragment.map.moveCamera(CameraUpdateFactory.newLatLng(pp));
@@ -255,17 +255,17 @@ public class GPSTracker implements LocationListener {
             loc2.setLatitude(latprev);
             loc2.setLongitude(lngprev);
             double distanceInMeters = loc1.distanceTo(loc2);
-            Toast.makeText(context, "DIS TA NCE  2 POINTS "+distanceInMeters, Toast.LENGTH_SHORT).show();
+      //      Toast.makeText(context, "DIS TA NCE  2 POINTS "+distanceInMeters, Toast.LENGTH_SHORT).show();
             //end 18-4-18
 
             //double z=distanceInMeters+ MainActivity.sumdistance1;  //270318
             //MainActivity.sumdistance1 = z;  //270318
             double z=distanceInMeters+ MainActivity.temp_sumdistance;  //18-4-18
             MainActivity.temp_sumdistance= z;  //18-4-18
-            Toast.makeText(context, " change loc CURRENT TEMP_DISTANCE "+MainActivity.temp_sumdistance, Toast.LENGTH_SHORT).show(); //18-4-18
+         //   Toast.makeText(context, " change loc CURRENT TEMP_DISTANCE "+MainActivity.temp_sumdistance, Toast.LENGTH_SHORT).show(); //18-4-18
 
             z2=distanceInMeters+z2; //20-4-18
-            Toast.makeText(context, " z2 auxanei +++??? "+z2, Toast.LENGTH_SHORT).show(); //18-4-18
+      //      Toast.makeText(context, " z2 auxanei +++??? "+z2, Toast.LENGTH_SHORT).show(); //18-4-18
             MainActivity.current_distance_user=z2;//20-4-18
 
             //mDatabase.child("DOKIMI").child("distance1").child("synolo").setValue(z);  //270318
@@ -283,7 +283,7 @@ public class GPSTracker implements LocationListener {
         ++counter;
 
 
-        Toast.makeText(context, " pontoi ++", Toast.LENGTH_SHORT).show(); //20-4-18
+      //  Toast.makeText(context, " pontoi ++", Toast.LENGTH_SHORT).show(); //20-4-18
         MainActivity.pontoi=MainActivity.pontoi +1.0; //20-4-18  ++pontoi /7 gia car   /3 gia bike remain the same gia walker
 
 
@@ -317,14 +317,14 @@ public class GPSTracker implements LocationListener {
         //19-4-18  prowsini lista me lat kai lon
         MainActivity.temp_lista_lat.add(latnext);
         MainActivity.temp_lista_lon.add(lngnext);
-        Toast.makeText(context, " loc change listalat proswrini"+MainActivity.temp_lista_lat, Toast.LENGTH_SHORT).show(); //19-4-18
+     //   Toast.makeText(context, " loc change listalat proswrini"+MainActivity.temp_lista_lat, Toast.LENGTH_SHORT).show(); //19-4-18
         //end 19-4-18  prowsini lista me lat kai lon
 
 
         //20-4-18
         MainActivity.temp_lista_LATLON.add(latnext);
         MainActivity.temp_lista_LATLON.add(lngnext);
-        Toast.makeText(context, " loc change LATLON PROSWRI"+MainActivity.temp_lista_LATLON, Toast.LENGTH_SHORT).show(); //19-4-18
+     //   Toast.makeText(context, " loc change LATLON PROSWRI"+MainActivity.temp_lista_LATLON, Toast.LENGTH_SHORT).show(); //19-4-18
         //20-4-18
 
 

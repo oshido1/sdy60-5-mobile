@@ -1,6 +1,7 @@
 package com.example.panos.ge5mobile;
 
 //import android.app.FragmentManager;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.provider.ContactsContract;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -434,19 +436,19 @@ private static final String TAG = MainActivity.class.getSimpleName();
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
 
-                    Toast.makeText(getApplicationContext(), "before new adventure", Toast.LENGTH_LONG).show();
+                //    Toast.makeText(getApplicationContext(), "before new adventure", Toast.LENGTH_LONG).show();
 
                         for (DataSnapshot dsp1 :  dataSnapshot.child("pedestrian LATLON").getChildren()) {
                             ArrayList distancelist = new ArrayList();  // diki mou metartorpoi  ok douley????    20-4-18 noon
                             //sos na kanw diplo for kai na diavasw
-                            Toast.makeText(getApplicationContext(), "@@@last attempt pedest dsp1.getValue() = " + dsp1.getValue(), Toast.LENGTH_LONG).show();
+                       //     Toast.makeText(getApplicationContext(), "@@@last attempt pedest dsp1.getValue() = " + dsp1.getValue(), Toast.LENGTH_LONG).show();
                             // Toast.makeText(getApplicationContext(), "@@@distancelist "+distancelist+"  distancelistsize= "+distancelist.size() , Toast.LENGTH_LONG).show();
 
         //                    Toast.makeText(getApplicationContext(), "@@@last attempt dsp1.getKey()= " + dsp1.getKey(), Toast.LENGTH_LONG).show();
                             String alabourn;
                             alabourn=dsp1.getKey();
-                            Toast.makeText(getApplicationContext(), " #number children pedest "+
-                                    dataSnapshot.child("pedestrian LATLON").child(alabourn).getChildrenCount() , Toast.LENGTH_LONG).show();
+                       //     Toast.makeText(getApplicationContext(), " #number children pedest "+
+                          //          dataSnapshot.child("pedestrian LATLON").child(alabourn).getChildrenCount() , Toast.LENGTH_LONG).show();
                             //epitelous  6 kai 8 paidia
 
                             // Toast.makeText(getApplicationContext(), " #isws??? "+
@@ -472,10 +474,10 @@ private static final String TAG = MainActivity.class.getSimpleName();
 
                             double lat2=0.0;
                             double lng2=0.0;
-                            Toast.makeText(getApplicationContext(), " #mikos listas pedes"+ mikos_listas, Toast.LENGTH_LONG).show();
+                        //    Toast.makeText(getApplicationContext(), " #mikos listas pedes"+ mikos_listas, Toast.LENGTH_LONG).show();
                             if (mikos_listas>=4){
                                 for (int i = 0; i+4 < mikos_listas; i+=2) {
-                                    Toast.makeText(getApplicationContext(), " #makari lista pedes= "+list_lat_lon , Toast.LENGTH_LONG).show();
+                       //             Toast.makeText(getApplicationContext(), " #makari lista pedes= "+list_lat_lon , Toast.LENGTH_LONG).show();
 
                                     //Toast.makeText(getApplicationContext(), " #makari i= "+i+" lista[0]"+list_lat_lon.get(0) , Toast.LENGTH_LONG).show();
                                     lat1= list_lat_lon.get(i);
@@ -483,7 +485,7 @@ private static final String TAG = MainActivity.class.getSimpleName();
                                     lat2= list_lat_lon.get(i+2);
                                     lng2 = list_lat_lon.get(i+3);
                                     // prin to polyline na fortosw to xarti
-                                    Toast.makeText(getApplicationContext(), " #makairi latlng ana 2 pedes"+ lat1+" "+lng1+" "+lat2+" "+lng2 , Toast.LENGTH_LONG).show();
+                //                    Toast.makeText(getApplicationContext(), " #makairi latlng ana 2 pedes"+ lat1+" "+lng1+" "+lat2+" "+lng2 , Toast.LENGTH_LONG).show();
                                     // risk !! prepei na fortwthei o xartis prwta
                                     Polyline line = ContactUsFragment.map.addPolyline(new PolylineOptions()
                                             .add(new LatLng(lat1, lng1), new LatLng(lat2, lng2))
@@ -499,14 +501,14 @@ private static final String TAG = MainActivity.class.getSimpleName();
                     for (DataSnapshot dsp1 :  dataSnapshot.child("car lons").getChildren()) {
                         ArrayList distancelist = new ArrayList();  // diki mou metartorpoi  ok douley????    20-4-18 noon
                         //sos na kanw diplo for kai na diavasw
-                        Toast.makeText(getApplicationContext(), "@@@last attempt car dsp1.getValue() = " + dsp1.getValue(), Toast.LENGTH_LONG).show();
+              //          Toast.makeText(getApplicationContext(), "@@@last attempt car dsp1.getValue() = " + dsp1.getValue(), Toast.LENGTH_LONG).show();
                         // Toast.makeText(getApplicationContext(), "@@@distancelist "+distancelist+"  distancelistsize= "+distancelist.size() , Toast.LENGTH_LONG).show();
 
                         //                    Toast.makeText(getApplicationContext(), "@@@last attempt dsp1.getKey()= " + dsp1.getKey(), Toast.LENGTH_LONG).show();
                         String alabourn;
                         alabourn=dsp1.getKey();
-                        Toast.makeText(getApplicationContext(), " #number children car"+
-                                dataSnapshot.child("car lons").child(alabourn).getChildrenCount() , Toast.LENGTH_LONG).show();
+         //               Toast.makeText(getApplicationContext(), " #number children car"+
+       //                         dataSnapshot.child("car lons").child(alabourn).getChildrenCount() , Toast.LENGTH_LONG).show();
                         //epitelous  6 kai 8 paidia
 
                         // Toast.makeText(getApplicationContext(), " #isws??? "+
@@ -532,10 +534,10 @@ private static final String TAG = MainActivity.class.getSimpleName();
 
                         double lat2=0.0;
                         double lng2=0.0;
-                        Toast.makeText(getApplicationContext(), " #mikos listas car"+ mikos_listas, Toast.LENGTH_LONG).show();
+     //                   Toast.makeText(getApplicationContext(), " #mikos listas car"+ mikos_listas, Toast.LENGTH_LONG).show();
                         if (mikos_listas>=4){
                             for (int i = 0; i+4 < mikos_listas; i+=2) {
-                                Toast.makeText(getApplicationContext(), " #makari lista car= "+list_lat_lon , Toast.LENGTH_LONG).show();
+         //                       Toast.makeText(getApplicationContext(), " #makari lista car= "+list_lat_lon , Toast.LENGTH_LONG).show();
 
                                 //Toast.makeText(getApplicationContext(), " #makari i= "+i+" lista[0]"+list_lat_lon.get(0) , Toast.LENGTH_LONG).show();
                                 lat1= list_lat_lon.get(i);
@@ -543,7 +545,7 @@ private static final String TAG = MainActivity.class.getSimpleName();
                                 lat2= list_lat_lon.get(i+2);
                                 lng2 = list_lat_lon.get(i+3);
                                 // prin to polyline na fortosw to xarti
-                                Toast.makeText(getApplicationContext(), " #makairi latlng car ana 2"+ lat1+" "+lng1+" "+lat2+" "+lng2 , Toast.LENGTH_LONG).show();
+     //                           Toast.makeText(getApplicationContext(), " #makairi latlng car ana 2"+ lat1+" "+lng1+" "+lat2+" "+lng2 , Toast.LENGTH_LONG).show();
                                 // risk !! prepei na fortwthei o xartis prwta
                                 Polyline line = ContactUsFragment.map.addPolyline(new PolylineOptions()
                                         .add(new LatLng(lat1, lng1), new LatLng(lat2, lng2))
@@ -559,14 +561,14 @@ private static final String TAG = MainActivity.class.getSimpleName();
                     for (DataSnapshot dsp1 :  dataSnapshot.child("bike lons").getChildren()) {
                         ArrayList distancelist = new ArrayList();  // diki mou metartorpoi  ok douley????    20-4-18 noon
                         //sos na kanw diplo for kai na diavasw
-                        Toast.makeText(getApplicationContext(), "@@@last attempt bike dsp1.getValue() = " + dsp1.getValue(), Toast.LENGTH_LONG).show();
+   //                     Toast.makeText(getApplicationContext(), "@@@last attempt bike dsp1.getValue() = " + dsp1.getValue(), Toast.LENGTH_LONG).show();
                         // Toast.makeText(getApplicationContext(), "@@@distancelist "+distancelist+"  distancelistsize= "+distancelist.size() , Toast.LENGTH_LONG).show();
 
                         //                    Toast.makeText(getApplicationContext(), "@@@last attempt dsp1.getKey()= " + dsp1.getKey(), Toast.LENGTH_LONG).show();
                         String alabourn;
                         alabourn=dsp1.getKey();
-                        Toast.makeText(getApplicationContext(), " #number children bike"+
-                                dataSnapshot.child("bike lons").child(alabourn).getChildrenCount() , Toast.LENGTH_LONG).show();
+  //                      Toast.makeText(getApplicationContext(), " #number children bike"+
+   //                             dataSnapshot.child("bike lons").child(alabourn).getChildrenCount() , Toast.LENGTH_LONG).show();
                         //epitelous  6 kai 8 paidia
 
                         // Toast.makeText(getApplicationContext(), " #isws??? "+
@@ -592,10 +594,10 @@ private static final String TAG = MainActivity.class.getSimpleName();
 
                         double lat2=0.0;
                         double lng2=0.0;
-                        Toast.makeText(getApplicationContext(), " #mikos listas bike"+ mikos_listas, Toast.LENGTH_LONG).show();
+      //                  Toast.makeText(getApplicationContext(), " #mikos listas bike"+ mikos_listas, Toast.LENGTH_LONG).show();
                         if (mikos_listas>=4){
                             for (int i = 0; i+4 < mikos_listas; i+=2) {
-                                Toast.makeText(getApplicationContext(), " #makari lista bike= "+list_lat_lon , Toast.LENGTH_LONG).show();
+    //                            Toast.makeText(getApplicationContext(), " #makari lista bike= "+list_lat_lon , Toast.LENGTH_LONG).show();
 
                                 //Toast.makeText(getApplicationContext(), " #makari i= "+i+" lista[0]"+list_lat_lon.get(0) , Toast.LENGTH_LONG).show();
                                 lat1= list_lat_lon.get(i);
@@ -603,7 +605,7 @@ private static final String TAG = MainActivity.class.getSimpleName();
                                 lat2= list_lat_lon.get(i+2);
                                 lng2 = list_lat_lon.get(i+3);
                                 // prin to polyline na fortosw to xarti
-                                Toast.makeText(getApplicationContext(), " #makairi latlng bike ana 2"+ lat1+" "+lng1+" "+lat2+" "+lng2 , Toast.LENGTH_LONG).show();
+//                                Toast.makeText(getApplicationContext(), " #makairi latlng bike ana 2"+ lat1+" "+lng1+" "+lat2+" "+lng2 , Toast.LENGTH_LONG).show();
                                 // risk !! prepei na fortwthei o xartis prwta
                                 Polyline line = ContactUsFragment.map.addPolyline(new PolylineOptions()
                                         .add(new LatLng(lat1, lng1), new LatLng(lat2, lng2))
@@ -626,33 +628,10 @@ private static final String TAG = MainActivity.class.getSimpleName();
                 }
             });
 
-                    //sos 19
-                    //for (DataSnapshot dsp : dataSnapshot.getChildren()) {
-
-                        /*for (DataSnapshot dsp : dataSnapshot.child("pedestrian lats").getChildren()) {
-                    //for (DataSnapshot dsp : dataSnapshot.child("user2").getChildren()) {
-                        //dsp.child("user2").getValue();  18-4-18  MONO GIA user2 ok
-                        //dsp.child(temp_child).getValue(); //19-4-18  night
-                        dsp.getValue();
-                        //Toast.makeText(getApplicationContext(), "!!!!***pedestrian lat value ??? " + dsp.getValue(), Toast.LENGTH_LONG).show(); //ok deixnei
-                        // kateytheian to polyline gia ta getvalue
-                        //new_lista_LATLON.add(dsp.getValue());
-                       //MAKE POLYLINE
-                        //new_lista_lat=null;
-
-                        //new_lista_lat.add(dsp.getValue());
-                        // Toast.makeText(getApplicationContext(), "!!!!***new listlat pou ayxanei " + new_lista_lat, Toast.LENGTH_LONG).show(); //ok deixnei
-
-                        //deixnei ta LUAb5J4-7avk
-                        //Toast.makeText(getApplicationContext(), "!!!!***pedestrian key  " + dsp.getKey(), Toast.LENGTH_LONG).show(); //19-4-18
-
-                        //childDataSnapshot.getKey()
-                    }  */
 
 
 
-
-                }  //end R.id.sel_user
+       }  //end R.id.sel_user
 
            //19-4-18
 
@@ -700,9 +679,39 @@ private static final String TAG = MainActivity.class.getSimpleName();
                 }
             });
 
-            Toast.makeText(MainActivity.this, " STATS: SCORE USER1,USER2,USER 3 " +pontoi1+" "+pontoi2+" "+pontoi3 , Toast.LENGTH_SHORT).show();  //21-4-18
-            Toast.makeText(MainActivity.this, " STATS: SCORE USER4,USER5, USER6 " +pontoi4+" "+pontoi5+" "+pontoi6, Toast.LENGTH_SHORT).show();  //21-4-18
-            Toast.makeText(MainActivity.this, " STATS: DISTANCE WITH WALK, CAR, BIKE " +sumwalk+" "+sumcar+" "+sumbike , Toast.LENGTH_SHORT).show();  //21-4-18
+            Toast.makeText(MainActivity.this, " ΣΚΟΡ USER1="+pontoi1+" USER2="+pontoi2 +" USER 3=" +pontoi3 , Toast.LENGTH_SHORT).show();  //24-4-18
+            Toast.makeText(MainActivity.this, " ΣΚΟΡ USER4="+pontoi4+" USER5="+pontoi5 +" USER 6=" +pontoi6 , Toast.LENGTH_SHORT).show();  //24-4-18
+            Toast.makeText(MainActivity.this, " ΑΠΟΣΤΑΣΗ ΑΝΑ ΚΑΤΗΓΟΡΙΑ: ΠΕΖΟΠΟΡΙΑ="+sumwalk+" ΑΜΑΞΙΔΙΟ="+sumcar+" ΠΟΔΗΛΑΤΟ=" +sumbike , Toast.LENGTH_SHORT).show();  //24-4-18
+
+
+          //24-4-18
+            //AlertDialog.Builder builder1 = new AlertDialog.Builder(context);
+            AlertDialog.Builder builder1 = new AlertDialog.Builder(MainActivity.this);
+            //builder1.setMessage("Write your message here.");
+            builder1.setMessage(" ΣΚΟΡ " +
+                    "--------------------------\n"+"USER1="+pontoi1+" USER2="+pontoi2
+                    +"\n"+"USER 3=" +pontoi3+" USER4="+pontoi4
+                    + "\n" +"USER5="+pontoi5 +" USER 6=" +pontoi6
+                    +"\n-----------------------------------------\n"
+                    +"\n"+"ΑΠΟΣΤΑΣΗ ΑΝΑ ΚΑΤΗΓΟΡΙΑ: ΠΕΖΟΠΟΡΙΑ="+sumwalk+" ΑΜΑΞΙΔΙΟ="+sumcar+" ΠΟΔΗΛΑΤΟ=" +sumbike  );
+            builder1.setCancelable(true);
+
+            builder1.setPositiveButton(
+                    "OK",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            dialog.cancel();
+                        }
+                    });
+
+
+
+            AlertDialog alert11 = builder1.create();
+            alert11.show();
+
+
+
+          //24-4-18
 
 
 
@@ -725,7 +734,7 @@ private static final String TAG = MainActivity.class.getSimpleName();
                 final double lat = l.getLatitude();
                 final double lon = l.getLongitude();
 
-                Toast.makeText(MainActivity.this, "apo menou current location yparxei "+lat,  Toast.LENGTH_SHORT).show();   //remove 260318
+               // Toast.makeText(MainActivity.this, "apo menou current location yparxei "+lat,  Toast.LENGTH_SHORT).show();   //remove 260318
 
                 LatLng pp = new LatLng(lat,lon);
                 MarkerOptions option = new MarkerOptions();
@@ -752,7 +761,7 @@ private static final String TAG = MainActivity.class.getSimpleName();
 
             }
             else{
-                Toast.makeText(MainActivity.this, "apo menou current location  = null " , Toast.LENGTH_SHORT).show();   //remove 260318
+            //    Toast.makeText(MainActivity.this, "apo menou current location  = null " , Toast.LENGTH_SHORT).show();   //remove 260318
             }
 
 
@@ -906,10 +915,7 @@ private static final String TAG = MainActivity.class.getSimpleName();
             //end 18-4-18
 
 
-            //19-4-18
-            //mDatabase.child("bike lats").push().setValue(temp_lista_lat);
-            //mDatabase.child("bike lons").push().setValue(temp_lista_lon);
-            //19-4-18
+
 
             //20-4-18
             mDatabase.child("bike lons").push().setValue(temp_lista_LATLON);

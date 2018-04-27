@@ -5,14 +5,15 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/cur_location"
+            android:title="ΑΡΧΗ - ΤΡΕΧΟΥΣΑ ΘΕΣΗ" />
+
+        <item
             android:id="@+id/sel_user"
             android:title="ΙΣΤΟΡΙΚO ΔΙΑΔΡΟΜΩΝ" />
         <item
             android:id="@+id/sel_statistics"
             android:title="ΣΤΑΤΙΣΤΙΚΑ" />
-        <item
-            android:id="@+id/cur_location"
-            android:title="ΤΡΕΧΟΥΣΑ ΘΕΣΗ" />
 
         <item
             android:id="@+id/nav_manage"
